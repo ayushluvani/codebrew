@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root {
+    --main-color: #443;
+    --border-radius: 95% 4% 97% 5% / 4% 94% 3% 95%;
+    --border-radius-hover: 4% 95% 6% 95% / 95% 4% 92% 5%;
+    --border: .2rem solid var(--main-color);
+    --border-hover: .2rem dashed var(--main-color);
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.heading {
+    font-size: 9rem;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: .05rem var(--main-color);
+    letter-spacing: .2rem;
+    text-align: center;
+    pointer-events: none;
+    position: relative;
+}
+
+.heading span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color: var(--main-color);
+    font-size: 3rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: .9rem 1.5rem;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    color: var(--main-color);
+    background: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+}
+
+.btn:hover {
+    border-radius: var(--border-radius-hover);
+    border: var(--border-hover);
+}
+
+/* HEADER */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background: transparent;
+    padding: 1.5rem 5%;
+    transition: padding 1s ease, background-color 1s ease;
+}
+
+.header.scrolled {
+    background: rgb(179, 179, 169);
+}
+
+.header .logo {
+    color: var(--main-color);
+    font-size: 2rem;
+    transition: font-size 0.3s ease;
+}
+
+.header .logo i {
+    padding-left: .5rem;
+}
+
+.header .navbar a {
+    margin: 0 0.5rem; 
+    font-size: 1.5rem; 
+    color: var(--main-color);
+    transition: margin 0.3s ease, font-size 0.3s ease;
+}
+
+.header .btn {
+    margin-top: 0;
+    font-size: 1.5rem;
+    padding: 0.7rem 1.2rem;
+    transition: font-size 0.3s ease, padding 0.3s ease;
+}
+
+#menu-btn {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    cursor: pointer;
+    display: none; 
+    transition: font-size 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem 3%; 
+    }
+
+    .header .logo {
+        font-size: 1.8rem;
+    }
+
+    .header .navbar a {
+        margin: 0 0.3rem;
+        font-size: 1.3rem;
+    }
+
+    .header .btn {
+        font-size: 1.3rem; 
+        padding: 0.5rem 1rem;
+    }
+
+    #menu-btn {
+        display: block; 
+    }
+}
+
+/* HOME */
+
+.home {
+    min-height: 100vh;
+    padding-top: 12rem;
+    background: url(../image/cd-home-bg.jpg) no-repeat fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.home .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.home .row .content {
+    flex: 1 1 42rem;    
+}
+
+.home .row .image {
+    flex: 1 1 42rem;
+    padding-top: 10rem;
+    text-align: center;
+}
+
+.home .row .image img {
+    height: 35rem;
+    animation: float 4s linear infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0rem);
+    }
+
+    50% {
+        transform: translateY(-7rem);
+    }
+}
+
+.home .row .content h3 {
+    font-size: 6.5rem;
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+
+.home .image-slider {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.home .image-slider img {
+    height: 9rem;
+    margin: 0 .5rem;
+    cursor: pointer;
+    margin-top: 5rem;
+}
+
+.home .image-slider img:hover {
+    transform: translateY(-2rem);
+}
+
+
+/* COFFEE MENU */
+.menu {
+    margin-top: -200px;
+    min-height: 100vh;
+    padding: 6rem 0; 
+    background: url(../image/cd-home-bg.jpg) no-repeat fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.menu .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 2rem; 
+}
+
+
+.menu h2 {
+    text-align: center;
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 3rem; 
+}
+
+.coffee-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+}
+
+.coffee-item {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #ffffffc0;
+    border: 1px solid black;
+    position: relative; 
+}
+
+@media (min-width: 768px) {
+    .coffee-item {
+        width: 48%; 
+    }
+}
+
+@media (min-width: 1024px) { 
+    .coffee-item {
+        width: 48%; 
+    }
+}
+
+.coffee-item .coffee-image {
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%;
+    float: left;
+    margin-right: 1rem;
+    margin-left: -1rem;
+}
+
+.coffee-item::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.coffee-item h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-left: 120px;
+}
+
+.coffee-item p {
+    color: #666;
+    margin-top: 1.2rem;
+    font-size: medium;
+    margin-left: 120px;
+}
+
+.coffee-item::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 110px;
+    width: 1px;
+    background-color: black;
+}
+
+/* FOOTER */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20rem;
+    background: url(../image/cd-home-bg.jpg) no-repeat fixed;
+    background-position: center;
+    background-size: cover;
+    color: #443;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.footer .footer-logo {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+}
+
+.footer p {
+    margin: 0;
+    font-size: larger;
+    padding: 0 1rem;
+}
+
+.footer .footer-socials {
+    display: flex;
+    align-items: center;
+}
+
+.footer .social-link {
+    display: inline-block;
+    margin-left: 3rem;
+    color: #443;
+    font-size: 2rem;
+}
+
+.footer .social-link i {
+    transition: color 0.3s ease;
+}
+
+.footer .social-link:hover i {
+    font-size: 2.5rem;
+    color: black;
+}
+
